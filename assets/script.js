@@ -1,7 +1,7 @@
 var used = [];
 
 function initMap() {
-    $.getJSON("assets/myData.json", function (data) {
+    $.getJSON("https://api.myjson.com/bins/72w7n", function (data) {
         myData = data;
         console.log(myData);
 
@@ -23,16 +23,6 @@ function initMap() {
             el.textContent = pubName;
             el.value = location;
             selectEnd.appendChild(el);
-        }
-
-        var selectWaypoint = document.getElementById("waypoints");
-        for (var i = 0; i < myData.length; i++) {
-            var pubName = myData[i].name;
-            var location = myData[i].lat + ", " + myData[i].long;
-            var el = document.createElement("option");
-            el.textContent = pubName;
-            el.value = location;
-            selectWaypoint.appendChild(el);
         }
 
         var directionsService = new google.maps.DirectionsService;
