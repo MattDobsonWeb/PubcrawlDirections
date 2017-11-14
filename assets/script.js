@@ -1,5 +1,5 @@
 function initMap() {
-    $.getJSON("assets/myData.json", function (data) {
+    $.getJSON("https://api.myjson.com/bins/72w7n", function (data) {
         myData = data;
         console.log(myData);
         
