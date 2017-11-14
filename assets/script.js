@@ -37,6 +37,7 @@ function initMap() {
         directionsDisplay.setMap(map);
 
         document.getElementById('submit').addEventListener('click', function () {
+            $("#pub_list").html("");
             calculateAndDisplayRoute(directionsService, directionsDisplay);
         });
 
@@ -56,6 +57,8 @@ function initMap() {
                         stopover: true
                     })
                 }
+                
+                $('#pub_list').append('<li><div class="container"><h2>' + ((i+1) + 1) + '. ' + myData[randomPub].name + ' <span class="rating">' + 'Our Rating: ' + myData[randomPub].rating + '</span></h2><p>' + myData[randomPub].description + '</p></div></li>'); // adds pub names and descriptions to the pub_list div
             }
 
             directionsService.route({
@@ -68,23 +71,10 @@ function initMap() {
                 if (status === 'OK') {
                     directionsDisplay.setDirections(response);
                     var route = response.routes[0];
-                    var summaryPanel = document.getElementById('directions-panel');
-                    summaryPanel.innerHTML = '';
-                    // For each route, display summary information.
-                    for (var i = 0; i < route.legs.length; i++) {
-                        var routeSegment = i + 1;
-                        summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-                            '</b><br>';
-                        summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-                        summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-                        summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-                    }
                 } else {
                     window.alert('Directions request failed due to ' + status);
                 }
             });
-            
-            $('#pub_list').append('<li><div class="container"><h2>' + (i + 1) + '. ' + myData[randomPub].name + ' <span class="rating">' + 'Our Rating: ' + myData[randomPub].rating + '</span></h2><p>' + myData[randomPub].description + '</p></div></li>'); // adds pub names and descriptions to the pub_list div
         }
 
     });

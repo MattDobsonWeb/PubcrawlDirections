@@ -1,22 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>Waypoints in directions</title>
     <link rel="stylesheet" type="text/css" href="assets/styles.css">
-  </head>
-  <body>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Pubcrawl</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar"><span class="navbar-toggler-icon"></span></button>
+            <div class="navbar-collapse collapse" id="collapsingNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <b>Start: </b>
+                    <select id="start">
+                        <option>Select a starting point...</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <b>Number of pubs in between:</b>
+                    <select id="numberPubs">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                   <b>End:</b>
+                    <select id="end">
+                        <option>Choose an end point...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <input type="submit" id="submit" value="Generate Pubcrawl!">
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <div id="map"></div>
+    
+    <section id="route">
+        <ul class="pub-route">
+    <div id="pub_list"></div>
+</ul>
+    </section>
+<!--
     <div id="right-panel">
-    <div>
-    <b>Start:</b>
-    <select id="start">
-      <option>Choose a start point...</option>
-    </select>
-    <br>    
-    <b>Number of Pubs In Between:</b> <br>
-    <select id="numberPubs">
+        <div>
+            <b>Start:</b>
+
+            <br>
+            <b>Number of Pubs In Between:</b> <br>
+            <select id="numberPubs">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -27,22 +94,32 @@
         <option value="8">8</option>
         <option value="9">9</option>
     </select>
-    
-    <br>
-    <b>End:</b>
-    <select id="end">
+
+            <br>
+            <b>End:</b>
+            <select id="end">
       <option>Choose an end point...</option>
     </select>
-    <br>
-      <input type="submit" id="submit">
+            <br>
+            <input type="submit" id="submit">
+        </div>
+        <div id="directions-panel"></div>
     </div>
-    <div id="directions-panel"></div>
-    </div>
-    
+-->
+
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- Custom Script -->
     <script type="text/javascript" src="assets/script.js"></script>
+
+    <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbkAHGpz2v1czIEriu1bCBMW5sWuVSRMM&callback=initMap" async defer></script>
-    
-  </body>
+
+</body>
+
 </html>

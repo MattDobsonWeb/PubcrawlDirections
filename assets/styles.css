@@ -1,54 +1,35 @@
-#right-panel {
-    font-family: 'Roboto', 'sans-serif';
-    line-height: 30px;
-    padding-left: 10px;
-}
-
-#right-panel select,
-#right-panel input {
-    font-size: 15px;
-}
-
-#right-panel select {
-    width: 100%;
-}
-
-#right-panel i {
-    font-size: 12px;
-}
-
 html,
 body {
     height: 100%;
-    margin: 0;
-    padding: 0;
 }
 
 #map {
     height: 100%;
-    float: left;
-    width: 70%;
-    height: 100%;
+    width: 100%;
 }
 
-#right-panel {
-    margin: 20px;
-    border-width: 2px;
-    width: 20%;
-    height: 400px;
-    float: left;
-    text-align: left;
-    padding-top: 0;
+.rating {
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: right;
+}
+.pub-route {
+    list-style-type: none;
+    padding: 0;
+    color: white;
+    margin: 0;
 }
 
-#directions-panel {
-    margin-top: 10px;
-    background-color: #FFEE77;
-    padding: 10px;
-    overflow: scroll;
-    height: 174px;
+#pub_list li {
+    background: #2c3e50;
+    padding: 20px;
+    margin: 0;
 }
 
-.newsection {
-    position: relative;
+#pub_list li h2 {
+    font-weight: 700;
+}
+
+#pub_list li:nth-child(odd) {
+    background: #34495e;
 }
