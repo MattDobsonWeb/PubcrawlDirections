@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Waypoints in directions</title>
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="right-panel">
+    <div>
+    <b>Start:</b>
+    <select id="start">
+      <option>Choose a start point...</option>
+    </select>
+    <br>
+    <b>Waypoints:</b> <br>
+    <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+    <select multiple id="waypoints">
+    </select>
+    <br>
+    <b>End:</b>
+    <select id="end">
+      <option>Choose an end point...</option>
+    </select>
+    <br>
+      <input type="submit" id="submit">
+    </div>
+    <div id="directions-panel"></div>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbkAHGpz2v1czIEriu1bCBMW5sWuVSRMM&callback=initMap" async defer></script>
+    
+  </body>
+</html>
