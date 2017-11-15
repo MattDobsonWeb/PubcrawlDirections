@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Pubcrawl</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar"><span class="navbar-toggler-icon"></span></button>
@@ -32,16 +32,17 @@
     </nav>
 
     <section id="form">
-        <div class="container">
+        <div class="container text-center">
             <div class="row">
-                <div class="col-md-4">
-                    <b>Start: </b>
+                <div class="col-md-3">
+                    <h4>Start Point</h4>
                     <select id="start">
                         <option>Select a starting point...</option>
                     </select>
                 </div>
-                <div class="col-md-4">
-                    <b>Number of pubs in between:</b>
+                
+                <div class="col-md-3">
+                    <h4>Pubs In Between</h4>
                     <select id="numberPubs">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -54,58 +55,32 @@
                         <option value="9">9</option>
                     </select>
                 </div>
-                <div class="col-md-4">
-                   <b>End:</b>
+                
+                <div class="col-md-3">
+                    <h4>End Point</h4>
                     <select id="end">
                         <option>Choose an end point...</option>
                     </select>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
+
+                <div class="col-md-3 text-center">
                     <input type="submit" id="submit" value="Generate Pubcrawl!">
                 </div>
             </div>
         </div>
     </section>
-    
+
     <div id="map"></div>
-    
-    <section id="route">
+
+    <section id="route" class="text-center">
         <ul class="pub-route">
-    <div id="pub_list"></div>
-</ul>
+            <div id="start-point-list"></div>
+            <div id="pub_list"></div>
+            <div id="end-point-list"></div>
+        </ul>
+        
+        
     </section>
-<!--
-    <div id="right-panel">
-        <div>
-            <b>Start:</b>
-
-            <br>
-            <b>Number of Pubs In Between:</b> <br>
-            <select id="numberPubs">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-    </select>
-
-            <br>
-            <b>End:</b>
-            <select id="end">
-      <option>Choose an end point...</option>
-    </select>
-            <br>
-            <input type="submit" id="submit">
-        </div>
-        <div id="directions-panel"></div>
-    </div>
--->
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
